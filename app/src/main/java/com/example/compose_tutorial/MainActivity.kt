@@ -28,18 +28,40 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Greeting(name = "Android")
+
+//            Column(
+//                horizontalAlignment = Alignment.CenterHorizontally,
+//                modifier = Modifier
+//                    .fillMaxSize(0.3f)   // percentage
+//                    .background(Color.Cyan),
+//                verticalArrangement = Arrangement.SpaceEvenly
+//            ) {
+//                Text(text = "hello")
+//                Text(text = "Android")
+//                Text(text = "Android")
+//
+//            }
+
+            Row(
+                horizontalArrangement = Arrangement.SpaceEvenly,   // spaces
+                modifier = Modifier
+                    .width(300.dp)    // custom dp
+                    .fillMaxHeight(0.8f)
+                    .background(Color.Cyan),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(text = "hello")
+                Text(text = "Android")
+                Text(text = "Android")
+
+            }
+
+
+            // row/column is swapping arrangement/alignment - > horizontal/vertical
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 
 @Preview(showBackground = true, showSystemUi = false)
